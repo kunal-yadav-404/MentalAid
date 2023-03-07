@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import reactLogo from "./assets/react.svg";
+import NavBar from "./components/navbar";
+import Home from "./pages/Home";
+import Detect from "./pages/detect";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <div className='text-center bg-gumnaam h-screen flex justify-center items-center text-saaf'>
-      Kaam shuru karo doston !!!
-    </div>
-  )
+    <>
+      <NavBar />
+      <Home />
+    </>
+  );
 }
 
-export default App
+export default App;
