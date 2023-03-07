@@ -20,4 +20,9 @@ Now open the project and create a new branch so that your code is isolated from 
 
 After you have finished coding just push and try not to commit any merge conflicts .
 
+## How to structure the code - 
+
+I have created a folder in src called pages. If you are working on lets say about then create a file About.jsx and work on that . Import all the components in this file only no mattert how many components you make.
+Add all the compontents in the components folder by creating a new subfolder in it called about (same as the page you are creating so there wont be mess of different components )
+
 ## Lets rock lionss...
