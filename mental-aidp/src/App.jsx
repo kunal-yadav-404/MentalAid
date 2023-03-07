@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import reactLogo from "./assets/react.svg";
-import NavBar from "./components/navbar";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import reactLogo from "./assets/react.svg";
+import NavBar from "./pages/navbar";
 import Home from "./pages/Home";
-import Detect from "./pages/detect";
+import Detect from "./components/detect";
 import "./App.css";
 
 function App() {

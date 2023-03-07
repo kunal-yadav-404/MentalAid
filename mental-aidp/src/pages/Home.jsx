@@ -3,8 +3,6 @@ import mainPhoto from "../img/home.png";
 import docPhoto from "../img/doc.png";
 import "../index.css";
 
-import NavBar from "../components/navbar";
-
 const Home = () => {
   return (
     <>
@@ -33,8 +31,8 @@ const Home = () => {
               className="banner__authorImage"
             />
             <div>
-              <p className="banner__authorName">Fatima Mujahid</p>
-              <p className="banner__date">September 10, 2021</p>
+              <p className="banner__authorName">Joker</p>
+              <p className="banner__date">March 07, 2023</p>
             </div>
           </div>
         </div>
