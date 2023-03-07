@@ -1,9 +1,11 @@
 import { useState } from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 // import reactLogo from "./assets/react.svg";
-import NavBar from "./pages/navbar";
+import NavBar from "./components/navbar";
 import Home from "./pages/Home";
-import Detect from "./components/detect";
+import About from "./pages/About";
+import Detect from "./pages/Detect";
+import Services from "./pages/Services";
 import "./App.css";
 
 function App() {
@@ -11,8 +13,12 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <Home />
+      <Routes>
+        <Route index element={<Home />}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/detect" element={<Detect />} />
+      </Routes>
     </>
   );
 }

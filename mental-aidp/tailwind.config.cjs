@@ -6,10 +6,6 @@ module.exports = {
   ],
   theme: {
     extend: {},
-    colors:{
-      'gumnaam':'#242424',
-      'saaf':'#ffffff',
-    },
   },
   plugins: [],
 }

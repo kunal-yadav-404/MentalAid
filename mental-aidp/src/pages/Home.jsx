@@ -1,6 +1,6 @@
 import React from "react";
-import mainPhoto from "../img/home.png";
-import docPhoto from "../img/doc.png";
+import mainPhoto from "../images/home.png";
+import docPhoto from "../images/doc.png";
 import "../index.css";
 
 const Home = () => {
