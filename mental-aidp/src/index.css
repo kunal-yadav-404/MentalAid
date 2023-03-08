@@ -128,3 +128,11 @@
   display: flex;
   justify-content: center;
 }
+.cards{
+  align-items:center ;
+  display: flex;
+}
+.card-body{
+  margin: 30px;
+ 
+}
