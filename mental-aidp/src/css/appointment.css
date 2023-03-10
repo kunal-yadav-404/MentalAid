@@ -1,0 +1,36 @@
+.appointment-form {
+  padding-left: 60px;
+  padding-right: 60px;
+
+  height: 50%;
+
+  width: 50%;
+  color: white;
+
+  background-color: #1a234e;
+}
+.appoint {
+  background-color: #1a234e;
+}
+.appoint-img {
+  padding-top: 60px;
+  margin: 20px 20px 20px 40px;
+  height: 450px;
+  width: 40%;
+}
+
+.appoint-head {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+  padding: 20px;
+  background-color: #1a234e;
+  color: white;
+}
+.appointmentContent {
+  display: flex;
+}
+
+.w-100 {
+  color: black;
+}

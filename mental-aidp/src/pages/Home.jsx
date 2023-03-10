@@ -1,6 +1,7 @@
 import React from "react";
 import mainPhoto from "../images/home.png";
 import docPhoto from "../images/doc.png";
+
 import "../index.css";
 
 const Home = () => {
@@ -13,15 +14,17 @@ const Home = () => {
             <p className="banner__category">MentalAid</p>
             <h1 className="banner__title">We give solution to your pain</h1>
             <p className="banner__body">
-              HAPPY HOLI Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Obcaecati neque, minus necessitatibus culpa eligendi
-              nesciunt mollitia reiciendis voluptatum laboriosam libero
-              aspernatur. Laudantium exercitationem molestiae tempora odit,
-              nobis animi at eligendi.
+              Recognizing emotional patterns is essential for doctor to be able
+              to assist his patients more effectively and to provide them with
+              proper medication.We aim to aid doctors in recognizing these
+              patterns using ML which will help save essential time and will
+              give more accurate results.This will speed up the recovery of an
+              individual
               <br></br>
               <br></br>
               <br></br>
-              Aage ka kro
+              "You, yourself, as much as anybody in the entire universe, deserve
+              your love and affection."
             </p>
           </div>
           <div className="banner__author">
@@ -31,8 +34,8 @@ const Home = () => {
               className="banner__authorImage"
             />
             <div>
-              <p className="banner__authorName">Joker</p>
-              <p className="banner__date">March 07, 2023</p>
+              <p className="banner__authorName">Buddha</p>
+              <p className="banner__date">March 10, 2023</p>
             </div>
           </div>
         </div>
