@@ -128,11 +128,15 @@
   display: flex;
   justify-content: center;
 }
-.cards{
-  align-items:center ;
+.cards {
+  align-items: center;
   display: flex;
 }
-.card-body{
+.card-body {
   margin: 30px;
- 
+}
+
+/* to delete */
+.nav-items {
+  border: none !important;
 }

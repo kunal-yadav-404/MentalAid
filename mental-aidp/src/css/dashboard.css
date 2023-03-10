@@ -1,0 +1,20 @@
+.container-dash {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.head-dash {
+  font-size: 20px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #1b103b, #6b71e0);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.box-divide {
+  border: 2px solid #1b103b;
+}
