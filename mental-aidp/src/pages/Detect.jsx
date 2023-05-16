@@ -5,6 +5,7 @@ import axios from 'axios';
 
 function Detect() {
   const hisse=[];
+  const [chng,setchng]=useState(false);
   let mediaRecorder;
   window.onload = function() {
     navigator.mediaDevices.getUserMedia({ video:true ,audio:true}).then(stream => {
@@ -18,7 +19,6 @@ function Detect() {
           hisse.push(e.data);
         };
       });
-  
       document.getElementsByClassName("viram")[0].addEventListener("click", function() {
         mediaRecorder.stop();
         console.log("recording stopped");
@@ -30,13 +30,16 @@ function Detect() {
         a.href = url;
         a.download = "test.webm";
         a.click();
+        setchng(true);
       });
     });
   };
-  
-  const handleClick= ()=>{
-    window.location.href='./result';
-  }
+  useEffect(()=>{
+    if(chng){
+      window.location.href='./result';
+    }
+  },[chng]);
+
   function labon(){
     document.getElementById("reclab").classList.remove("hidden");
   }
@@ -52,9 +55,6 @@ function Detect() {
       <div className='mx-auto my-5'>
         <button className='bg-slate-300 hover:bg-slate-400 mr-5 rounded-full arambh' onClick={labon}><FaPlayCircle size={30}/></button>
         <button className='bg-slate-300 hover:bg-slate-400 ml-5 rounded-full viram' onClick={laboff}><FaRegStopCircle size={30}/></button>
-      </div>
-      <div>
-        <button className='rounded-md bg-emerald-500 w-24 border-spacing-2 hover:bg-emerald-600' onClick={handleClick}>Analyze</button>
       </div>
     </div>
   )
