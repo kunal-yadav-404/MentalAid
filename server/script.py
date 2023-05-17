@@ -1,19 +1,25 @@
 import subprocess
 import sys
+import base64
+import imageio.plugins.ffmpeg
 
-# Get the name of the module to install from command line argument
-module_name = sys.argv[1]
+imageio.plugins.ffmpeg.download()
+
 # Run the pip install command to download and install the module
 subprocess.check_call([sys.executable, "-m", "pip", "install", "fer"])
 subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflowjs"])
-subprocess.check_call([sys.executable, "-m", "pip", "install", "imageio==2.4.1"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "imageio"])
 
 from fer import Video
 from fer import FER
+from io import BytesIO
 import os
 import sys
 import pandas as pd
 import os
+
+print("hello working")
+
 
 # Put in the location of the video file that has to be processed
 location_videofile = os.getcwd()+"\\test.webm"
@@ -52,3 +58,21 @@ emotions_values = [angry, disgust, fear, happy, sad, surprise, neutral]
 score_comparisons = pd.DataFrame(emotions, columns = ['Human Emotions'])
 score_comparisons['Emotion Value from the Video'] = emotions_values
 score_comparisons
+
+
+
+
+# Save the figure to a BytesIO object
+buffer = BytesIO()
+pltfig.savefig(buffer, format='png')
+buffer.seek(0)
+
+# Encode the image data as base64
+base64_data = base64.b64encode(buffer.getvalue())
+
+# Convert the base64 data to a string
+my_string = base64_data.decode('utf-8')
+
+print(my_string)
+
+    
