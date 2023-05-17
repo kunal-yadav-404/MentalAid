@@ -19,7 +19,7 @@ const oauthtoclient = new google.auth.OAuth2(
 );
 oauthtoclient.setCredentials({ refresh_token: refresh_token });
 
-const mId = "";
+var mId = "";
 const drive = google.drive({
   version: 'v3',
   auth: oauthtoclient
@@ -48,10 +48,10 @@ app.get("/api", (req, res) => {
       console.log(error.message);
     }
   }
-  uploadFile();
 
   async function getLink() {
     try {
+      await uploadFile();
       const file_id = mId;
       await drive.permissions.create({
         fileId: file_id,
@@ -69,6 +69,17 @@ app.get("/api", (req, res) => {
       console.log(error.message);
     }
   }
+  let result = '';
+  const pythonProcess=spawn('python',['./script.py']);
+  pythonProcess.stdout.on('data',data=>{
+    console.log("the data is - "+data.toString());
+    // update result variable
+    result = data.toString();
+  });
+  pythonProcess.on('exit', () => {
+    // send response after process has completed
+    res.json({ result:result});
+  });
 
 })
 
