@@ -7,6 +7,7 @@ const { google } = require("googleapis");
 const path= require("path");
 const fs=require("fs");
 
+// intializing credentials to use google drive apis
 const client_id = '823774867075-4vq0do4ntr6648foobhdnt6puundmn8a.apps.googleusercontent.com';
 const client_secret = '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';
 const rediretURI = 'https://developers.google.com/oauthplayground/';
@@ -19,16 +20,23 @@ const oauthtoclient = new google.auth.OAuth2(
 );
 oauthtoclient.setCredentials({ refresh_token: refresh_token });
 
+//initializing variable to store ID of the file that will be uploaded on google drive
 var mId = "";
+
+//creating instance for accessing google drive
 const drive = google.drive({
   version: 'v3',
   auth: oauthtoclient
 })
 
+//enabling cors
 app.use(cors());
+
+//handling route to provide data on frontend
 app.get("/api", (req, res) => {
   const fileurl = path.join(__dirname, "test.webm");
 
+  //creating aysnc function to upload file on drive
   async function uploadFile() {
     try {
       const response = await drive.files.create({
@@ -42,6 +50,7 @@ app.get("/api", (req, res) => {
         }
       })
       console.log(response);
+      //saving id of the file for further use of fetching it back from the drive
       mId = response.id;
     }
     catch (error) {
@@ -49,6 +58,7 @@ app.get("/api", (req, res) => {
     }
   }
 
+  //creating aysc function to generate link of the uploaded file on the drive
   async function getLink() {
     try {
       await uploadFile();
@@ -69,6 +79,7 @@ app.get("/api", (req, res) => {
       console.log(error.message);
     }
   }
+  //this part is for running the python script on the backend and sending the json response to the frontend
   let result = '';
   const pythonProcess=spawn('python',['./script.py']);
   pythonProcess.stdout.on('data',data=>{
