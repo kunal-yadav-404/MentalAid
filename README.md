@@ -12,7 +12,7 @@
 •	Patient History: MentalAid maintains a comprehensive patient history, including past sessions, emotional trends, and other relevant data. This history aids therapists in developing personalized treatment plans for each individual.
 2.	Technology Stack:
 •	MERN Stack: The main technology foundation of the application, utilizing MongoDB for the database, Express.js for server-side operations, React.js for building the user interface, and Node.js for server-side execution.
-•	Python: The machine learning model is developed using Python, taking advantage of libraries and frameworks like TensorFlow, Keras, or OpenCV for facial expression analysis.
+•	Python: The machine learning model is developed using Python, taking advantage of libraries and frameworks like FER for facial expression analysis.
 3.	Personalized Care and Accuracy: The integration of facial expression analysis with the machine learning model allows MentalAid to offer personalized care to each patient. The model's 80% accuracy in analyzing emotions adds credibility to the insights provided, enabling therapists to make data-driven decisions to enhance treatment efficacy.
 MentalAid aims to bridge the gap between mental health professionals and those in need by providing an accessible, secure, and technologically advanced platform for remote therapy sessions, fostering mental well-being and emotional growth in individuals seeking support.
 
